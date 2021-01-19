@@ -1,0 +1,2 @@
+# letha
+This is my Interaction Design Course Assignment at Noroff
