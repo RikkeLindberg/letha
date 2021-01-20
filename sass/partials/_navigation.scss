@@ -1,0 +1,221 @@
+.header {
+  background-color: $color-primary;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    font-size: 2.8rem;
+    font-weight: 100;
+    color: $color-secondary;
+    text-transform: uppercase;
+    margin-left: 1rem;
+
+    &--sm {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $color-secondary;
+    padding: 1.5rem;
+
+    &:hover {
+      background-color: #363636;
+      color: $color-tertiary;
+    }
+
+    &:active {
+      background-color: darken($color: $color-primary, $amount: 10%);
+      color: darken($color: $color-tertiary, $amount: 10%);
+    }
+
+    &--dropdown {
+      border: none;
+      outline: none;
+      background-color: $color-primary;
+    }
+  }
+
+  &-icon {
+    margin: 0 1rem;
+
+    &__link {
+      color: $color-secondary;
+      font-size: 1.6rem;
+      margin-left: 0.8rem;
+
+      &:hover {
+        color: $color-tertiary;
+      }
+
+      &:active {
+        color: darken($color: $color-tertiary, $amount: 10%);
+      }
+    }
+  }
+
+  &__item--dropdown {
+    position: relative;
+  }
+
+  &__list--sub {
+    position: absolute;
+    list-style: none;
+    background-color: $color-primary;
+    left: 0;
+
+    display: none;
+  }
+}
+
+.nav__list .nav__item--dropdown:hover > .nav__link + .nav__list--sub {
+  display: block;
+}
+
+.arrow {
+  width: 0.5rem;
+  height: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+  border-left: 0.15rem solid currentColor;
+  border-bottom: 0.15rem solid currentColor;
+  transform: rotate(-45deg);
+  margin-top: -0.25rem;
+  transition: 300ms transform ease-in-out;
+}
+
+.display-dropdown {
+  display: block;
+}
+
+.nav__list > .nav__item--dropdown:hover > .nav__link > .arrow {
+  transform: rotate(-135deg);
+}
+
+#nav-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 840px) {
+  .nav {
+    position: relative;
+
+    &__logo {
+      order: 1;
+    }
+
+    &__list {
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      top: 3.3rem;
+      background-color: $color-primary;
+      display: none;
+      width: 100%;
+    }
+
+    &-icon {
+      order: 3;
+    }
+  }
+
+  .nav__toggle,
+  #nav-toggle {
+    order: 0;
+    margin: 0 1rem;
+  }
+
+  .nav__list > .nav__item--dropdown:hover > .nav__link + .nav__list--sub {
+    position: relative;
+    left: 10%;
+  }
+
+  .nav__toggle {
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .nav__icon {
+    position: relative;
+    margin-top: 1.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-secondary;
+      display: inline-block;
+      transition: all 200ms;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  .nav__toggle:hover .nav__icon,
+  .nav__toggle:hover .nav__icon::before,
+  .nav__toggle:hover .nav__icon::after {
+    background-color: $color-tertiary;
+  }
+
+  #nav-toggle:checked + .nav__toggle .nav__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  #nav-toggle:checked + .nav__toggle .nav__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  #nav-toggle:checked + .nav__toggle .nav__icon {
+    background-color: transparent;
+  }
+
+  #nav-toggle:checked ~ .nav__list {
+    position: absolute;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nav__logo--sm {
+    display: block;
+    padding: 0.5rem 0 1.5rem 0;
+  }
+
+  .nav__logo--lg {
+    display: none;
+  }
+
+  .nav {
+    padding-bottom: 1.5rem;
+  }
+}

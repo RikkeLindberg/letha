@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Letha</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="nav__logo nav__logo--sm" href="/">Letha</a>
+      <nav class="nav">
+        <a class="nav__logo nav__logo--lg" href="/">Letha</a>
+
+        <input type="checkbox" id="nav-toggle" />
+        <label for="nav-toggle" class="nav__toggle">
+          <span class="nav__icon">&nbsp;</span>
+        </label>
+
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="index.html">Home</a>
+          </li>
+          <li class="nav__item nav__item--dropdown">
+            <a class="nav__link" href="#">
+              Products
+              <span class="arrow"></span>
+            </a>
+            <ul class="nav__list--sub">
+              <li class="nav__item">
+                <a class="nav__link" href="shoes.html">Shoes</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="maintenance.html">Maintenance</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="about.html">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav-icon">
+          <a class="nav-icon__link" href="#">
+            <i class="fas fa-user"></i>
+          </a>
+          <a class="nav-icon__link" href="#">
+            <i class="fas fa-shopping-bag"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main></main>
+
+    <footer></footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
