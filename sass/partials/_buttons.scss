@@ -38,3 +38,47 @@ button {
     margin-right: 10px;
   }
 }
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+
+  &__accordion {
+    width: 100%;
+    outline: none;
+    background-color: $color-primary;
+    padding: 15px 10px;
+    color: $color-secondary;
+    text-align: left;
+    font-size: 1em;
+    transition: 600ms;
+  }
+}
+
+.faq__accordion:hover,
+.faq__accordion:focus,
+.is-open {
+  background-color: $color-active;
+}
+
+.faq__accordion::after {
+  content: "\f067";
+  font-family: "fontawesome";
+  float: right;
+}
+
+.is-open::after {
+  content: "\f068";
+}
+
+.faq__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 600ms;
+
+  & .text {
+    padding: 5px 10px 30px 10px;
+  }
+}
