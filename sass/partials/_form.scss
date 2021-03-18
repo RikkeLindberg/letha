@@ -1,1 +1,53 @@
+.subscribe-form {
+  &__input {
+    height: 45px;
+    padding: 0.5rem;
+    border: 1px solid $color-primary;
+    border-radius: 5px;
+    width: 100%;
+    margin: 8px 0;
+    outline: none;
+    background-color: transparent;
 
+    &::placeholder {
+      color: black;
+      opacity: 1;
+    }
+
+    &:focus {
+      border: 1px solid $color-tertiary;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+
+  &__input,
+  &__txtarea {
+    padding: 15px 5px;
+    margin: 5px 0 10px 0;
+    font-size: 0.9rem;
+    border: 1px solid $color-primary;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+
+    &:focus {
+      border: 1px solid $color-tertiary;
+    }
+  }
+
+  &__txtarea {
+    height: 200px;
+  }
+}
+
+#shoe-size,
+#maintenance {
+  height: 30px;
+  width: 50px;
+  margin-bottom: 15px;
+}

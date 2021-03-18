@@ -15,19 +15,14 @@ body {
   display: flex;
   flex-direction: column;
 
+  background-color: $color-secondary;
   font-family: "Roboto", sans-serif;
 }
 
 main {
-  flex: 10 auto;
+  flex: 1 0 auto;
 }
 
 footer {
   flex-shrink: 0;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-  transition: 300ms ease;
 }

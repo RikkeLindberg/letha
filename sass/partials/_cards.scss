@@ -1,0 +1,57 @@
+.card-interactive {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__link {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    top: calc(100% - 60px);
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    background-color: $color-primary;
+    color: $color-secondary;
+    transition: 600ms ease;
+
+    & span {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 0.3rem;
+    }
+
+    &:hover,
+    &:focus {
+      top: 0;
+      background: linear-gradient(
+        180deg,
+        rgba($color-tertiary, 0.7) 0%,
+        rgba($color-primary, 1) 100%
+      );
+    }
+  }
+
+  & .text {
+    width: 100%;
+    max-width: 52ch;
+    margin-top: 15px;
+  }
+}

@@ -1,4 +1,53 @@
-footer {
+.footer {
   background-color: $color-primary;
-  height: 200px;
+  padding: 0 5%;
+
+  &-menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+      list-style: none;
+    }
+
+    &__item {
+      margin-bottom: 10px;
+    }
+
+    &__link {
+      color: $color-secondary;
+
+      &:hover,
+      &:focus {
+        color: $color-tertiary;
+      }
+    }
+  }
+}
+
+.footer-nav h4 {
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-menu {
+    flex-direction: column;
+  }
+
+  .footer-nav:not(:last-of-type) {
+    margin-bottom: 3rem;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $color-secondary;
+      margin-top: 3rem;
+    }
+  }
 }

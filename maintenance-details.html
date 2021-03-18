@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="handmade leather shoes in oslo" />
+    <meta
+      name="keywords"
+      content="shoes, leather, shoemaker, leather shoes, organic leather, handmade shoes, mens shoes, 
+                                    handmade shoes Oslo, shoemaker in Oslo, shoes made in Norway, leather shoes for men"
+    />
+    <meta name="author" content="Rikke Lindberg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Letha | Shoes</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="nav__logo nav__logo--sm" href="/">Letha</a>
+      <nav class="nav">
+        <a class="nav__logo nav__logo--lg" href="/">Letha</a>
+
+        <input type="checkbox" id="nav-toggle" />
+        <label for="nav-toggle" class="nav__toggle">
+          <span class="nav__icon">&nbsp;</span>
+        </label>
+
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="index.html">Home</a>
+          </li>
+          <li class="nav__item nav__item--dropdown">
+            <a class="nav__link" href="#">
+              Products
+              <span class="arrow"></span>
+            </a>
+            <ul class="nav__list--sub">
+              <li class="nav__item">
+                <a class="nav__link" href="shoes.html">Shoes</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="maintenance.html">Maintenance</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="about.html">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="nav-icon">
+          <a class="nav-icon__link" href="#">
+            <i class="fas fa-user"></i>
+          </a>
+          <a class="nav-icon__link" href="#">
+            <i class="fas fa-shopping-bag"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="wrapper u-padding-lg">
+      <div class="container">
+        <section class="product">
+          <img
+            src="./images/lina-verovaya-A_XUPiyPOvg-unsplash.jpg"
+            alt="maintenance product"
+            class="product__img"
+          />
+          <div class="product-info">
+            <h4 class="heading-quaternary">Maintenance product</h4>
+            <p class="text">NOK 100</p>
+
+            <div class="product-reviews">
+              <a href="#reviews">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(reviews)</span>
+              </a>
+            </div>
+
+            <form>
+              <select name="maintenance" id="maintenance">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <a class="btn u-text-center" href="shopping-cart.html">
+                Add to cart
+              </a>
+            </form>
+
+            <div class="product-description">
+              <h4 class="heading-quaternary">Description</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="container">
+          <section class="footer-menu u-padding-md">
+            <div class="footer-nav">
+              <h4 class="heading-quaternary heading--light">Help</h4>
+              <ul class="footer-nav__list">
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#"> Faq </a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#">
+                    Shipping and delivery
+                  </a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#"> Returns </a>
+                </li>
+                <li class="footer-nav__item">
+                  <a class="footer-nav__link" href="#"> Payment </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-nav">
+              <h4 class="heading-quaternary heading--light">Contact us</h4>
+              <a class="btn" href="contact.html">
+                <i class="fas fa-at btn__icon"></i>Contact us
+              </a>
+            </div>
+
+            <div class="footer-nav">
+              <h4 class="heading-quaternary heading--light">Follow Letha</h4>
+              <a class="btn u-margin-b-sm" href="https://www.facebook.com">
+                <i class="fab fa-facebook-f btn__icon"></i>Facebook
+              </a>
+              <a class="btn u-margin-b-sm" href="https://instagram.com">
+                <i class="fab fa-instagram btn__icon"></i>Instagram
+              </a>
+              <a class="btn" href="https://snapchat.com">
+                <i class="fab fa-snapchat-ghost btn__icon"></i>Snapchat
+              </a>
+            </div>
+          </section>
+
+          <section class="copyright">
+            <small class="copyright__text">
+              Interaction Design - CA - by Rikke Lindberg
+            </small>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

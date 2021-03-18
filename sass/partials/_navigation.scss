@@ -31,7 +31,8 @@
     color: $color-secondary;
     padding: 1.5rem;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #363636;
       color: $color-tertiary;
     }
@@ -46,6 +47,10 @@
       outline: none;
       background-color: $color-primary;
     }
+
+    &--active {
+      color: $color-tertiary;
+    }
   }
 
   &-icon {
@@ -56,7 +61,8 @@
       font-size: 1.6rem;
       margin-left: 0.8rem;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $color-tertiary;
       }
 

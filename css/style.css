@@ -14,21 +14,132 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #f6f6f6;
   font-family: "Roboto", sans-serif;
 }
 
 main {
-  flex: 10 auto;
+  flex: 1 0 auto;
 }
 
 footer {
   flex-shrink: 0;
 }
 
-a {
-  text-decoration: none;
-  cursor: pointer;
-  transition: 300ms ease;
+.banner {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../../images/shoemaker-workshop-making-shoes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 71px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 75ch;
+  height: calc(100vh - 71px);
+}
+
+.cards,
+.instagram {
+  display: grid;
+  max-width: 1300px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.instagram__img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.product {
+  display: flex;
+  padding: 8rem 0;
+  gap: 2rem;
+}
+
+.product__img {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+}
+
+.product-reviews {
+  margin: 15px 0;
+}
+
+.product-reviews a {
+  color: #ffbb00;
+}
+
+.product-reviews span {
+  color: #111111;
+}
+
+.product select {
+  margin-bottom: 15px;
+}
+
+.product-description {
+  max-width: 60ch;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 885px) {
+  .instagram {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .instagram {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 395px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .header {
@@ -66,20 +177,24 @@ a {
   padding: 1.5rem;
 }
 
-.nav__link:hover {
+.nav__link:hover, .nav__link:focus {
   background-color: #363636;
-  color: #ff9900;
+  color: #ff7300;
 }
 
 .nav__link:active {
   background-color: black;
-  color: #cc7a00;
+  color: #cc5c00;
 }
 
 .nav__link--dropdown {
   border: none;
   outline: none;
   background-color: #111111;
+}
+
+.nav__link--active {
+  color: #ff7300;
 }
 
 .nav-icon {
@@ -92,12 +207,12 @@ a {
   margin-left: 0.8rem;
 }
 
-.nav-icon__link:hover {
-  color: #ff9900;
+.nav-icon__link:hover, .nav-icon__link:focus {
+  color: #ff7300;
 }
 
 .nav-icon__link:active {
-  color: #cc7a00;
+  color: #cc5c00;
 }
 
 .nav__item--dropdown {
@@ -200,7 +315,7 @@ a {
   .nav__toggle:hover .nav__icon,
   .nav__toggle:hover .nav__icon::before,
   .nav__toggle:hover .nav__icon::after {
-    background-color: #ff9900;
+    background-color: #ff7300;
   }
   #nav-toggle:checked + .nav__toggle .nav__icon::before {
     top: 0;
@@ -232,8 +347,304 @@ a {
   }
 }
 
-footer {
+.footer {
   background-color: #111111;
+  padding: 0 5%;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav__list {
+  list-style: none;
+}
+
+.footer-nav__item {
+  margin-bottom: 10px;
+}
+
+.footer-nav__link {
+  color: #f6f6f6;
+}
+
+.footer-nav__link:hover, .footer-nav__link:focus {
+  color: #ff7300;
+}
+
+.footer-nav h4 {
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-menu {
+    flex-direction: column;
+  }
+  .footer-nav:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+  .footer-nav:not(:last-of-type)::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #f6f6f6;
+    margin-top: 3rem;
+  }
+}
+
+.card-interactive {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__link {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  top: calc(100% - 60px);
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color: #111111;
+  color: #f6f6f6;
+  transition: 600ms ease;
+}
+
+.card__link span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+.card__link:hover, .card__link:focus {
+  top: 0;
+  background: linear-gradient(180deg, rgba(255, 115, 0, 0.7) 0%, #111111 100%);
+}
+
+.card .text {
+  width: 100%;
+  max-width: 52ch;
+  margin-top: 15px;
+}
+
+.subscribe-form__input {
+  height: 45px;
+  padding: 0.5rem;
+  border: 1px solid #111111;
+  border-radius: 5px;
+  width: 100%;
+  margin: 8px 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.subscribe-form__input::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.subscribe-form__input:focus {
+  border: 1px solid #ff7300;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.form__input, .form__txtarea {
+  padding: 15px 5px;
+  margin: 5px 0 10px 0;
+  font-size: 0.9rem;
+  border: 1px solid #111111;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+}
+
+.form__input:focus, .form__txtarea:focus {
+  border: 1px solid #ff7300;
+}
+
+.form__txtarea {
   height: 200px;
+}
+
+#shoe-size,
+#maintenance {
+  height: 30px;
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: 300ms ease;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: 300ms ease;
+  outline: none;
+}
+
+.btn {
+  display: block;
+  color: #f6f6f6;
+  background-color: #ff7300;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.btn:hover, .btn:focus {
+  box-shadow: none;
+}
+
+.btn:active {
+  background-color: #a84c00;
+}
+
+.btn__icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.heading--light {
+  color: #f6f6f6;
+}
+
+.heading--dark {
+  color: #111111;
+}
+
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  font-weight: 400;
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.heading-tertiary {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.heading-tertiary--instagram {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.heading-quaternary {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.sub-heading {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.sub-heading span {
+  text-transform: none;
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.text--light {
+  color: #f6f6f6;
+}
+
+.text--dark {
+  color: #111111;
+}
+
+.copyright {
+  text-align: center;
+  color: #f6f6f6;
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .heading-primary {
+    font-size: 2.4rem;
+  }
+}
+
+.u-padding-lg {
+  padding: 10rem 0;
+}
+
+.u-padding-md {
+  padding: 3rem 0;
+}
+
+.u-padding-b-lg {
+  padding-bottom: 10rem;
+}
+
+.u-margin-b-sm {
+  margin-bottom: 12px;
+}
+
+.u-margin-t-md {
+  margin-top: 30px;
+}
+
+.u-margin-t-lg {
+  margin-top: 6rem;
+}
+
+.u-text-center {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
